@@ -1,0 +1,32 @@
+
+            //En array med 10 elementer, teller fra 0-9.
+            int[] tenInteger = new int[10]
+                {4, 5, 9, 12, -4, 0, -57, 30987, -287, 1 };
+
+            //Kopierer tenInteger array til secondArray.
+            int[] secondArray = new int[10];
+
+            Array.Copy(tenInteger, 0, secondArray, 0, tenInteger.Length);
+
+            //Gir 0 valuen 1, overskriver 4.
+            tenInteger[0] = 1;
+
+            //Putter en variabel til tenInteger[0] for let henting.
+            int num = tenInteger[0];
+
+            //Variabel for valuen vi ser etter og en variabel som lagrer plasseringen.
+            //While, letter gjennom arrayen til den har nåd slutten med .Length,
+            //men vil returnere den siste posisjonen selv om valuen er feil hvis targetValuen ikke matcher
+            //og stopper med en gang den finner en match selv om det kan være flere.
+            int targetValue = 12;
+            int targetPosition = 0;
+            while (tenInteger[targetPosition] != targetValue && targetPosition < tenInteger.Length)
+            {
+                targetPosition++;
+            }
+
+            
+            Console.WriteLine("Posisjon funnet = " + targetPosition);
+            Console.WriteLine("Value på posisjonen = " + tenInteger[targetPosition]);
+            Console.WriteLine("tenInteger array index:0 = " + num);
+            Console.WriteLine("Kopiert array index:0 = " + secondArray[0]);
